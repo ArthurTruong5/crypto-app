@@ -13,4 +13,15 @@ class HomeController < ApplicationController
   def about
   end
 
+  def lookup
+    @symbol = params[:sym]
+
+    if @symbol
+    @symbol = @symbol.upcase
+    end
+
+    if @symbol == ""
+      @symbol = "You didn't enter anything."
+    end
+  end
 end
