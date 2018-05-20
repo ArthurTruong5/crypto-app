@@ -1,14 +1,5 @@
-<h1>Hello World</h1>
-<p>This is my first Rails application</p>
-
-<!-- THE = sign is only needed if you want to output something to the screen -->
-<% @coins %>
-
-  <% for x in @coins %>
-    <% for coin in @my_coins %>
-      <% if coin == x["symbol"] %>
-      Rank <%= x["rank"] %> -
-        <%= x["name"] %> : $<%= x["price_usd"] %><br><br>
-      <% end %>
-    <% end %>
-  <% end %>
+<div class="jumbotron">
+  <h2>The Finest Crypto Management Tool Ever.</h2>
+  <p>Immerse yourself with control - Arthur</p>
+  <p><a class="btn btn-default btn-lg" href="#" role="button">Learn more</a></p>
+</div>
