@@ -4,9 +4,15 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Symbol</th>
-      <th>User</th>
-      <th>Cost per</th>
+      <th>Current Price</th>
+      <th>Rank</th>
+      <th>1 Hr %</th>
+      <th>24 Hr %</th>
+      <th>7 Day %</th>
+      <th>Current Value</th>
+      <th>Total Paid</th>
+      <th>Profit/Loss</th>
+      <th>Cost Paid Per</th>
       <th>Amount owned</th>
     </tr>
   </thead>
@@ -16,16 +22,22 @@
       <tr>
         <% if currency.user_id == current_user.id %>
           <% if currency.symbol %>
-            <% currency.symbol == currency.symbol.upcase %><% end %>
+            <% currency.symbol = currency.symbol.upcase %>
+            <% end %>
             <% for x in @lookup_crypto %>
               <% if currency.symbol == x["symbol"] %>
                 <td><%= link_to x["name"], currency %></td>
+                <td>$<%= x["price_usd"] %></td>
+                <td><%= x["rank"] %></td>
+                <td><%= x["percent_change_1h"] %>%</td>
+                <td><%= x["percent_change_24h"] %>%</td>
+                <td><%= x["percent_change_7d"] %>%</td>
+                <td>$<%= x["price_usd"].to_d * currency.amount_owned %></td>
+                <td>$<%= currency.cost_per * currency.amount_owned %></td>
+                <td><%=(x["price_usd"].to_d * currency.amount_owned) - (currency.cost_per * currency.amount_owned) %></td>
               <% end %>
             <% end %>
-
-            <td><%= currency.symbol %></td>
-            <td><%= currency.user_id %></td>
-            <td><%= currency.cost_per %></td>
+            <td>$<%= currency.cost_per %></td>
             <td><%= currency.amount_owned %></td>
           </tr>
         <% end %>

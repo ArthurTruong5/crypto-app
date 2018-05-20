@@ -33,6 +33,7 @@ class CurrenciesController < ApplicationController
   # POST /currencies
   # POST /currencies.json
   def create
+
     @currency = Currency.new(currency_params)
 
     respond_to do |format|
