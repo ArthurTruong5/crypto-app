@@ -1,7 +1,7 @@
 class CurrenciesController < ApplicationController
   before_action :set_currency, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-
+  before_action :correct_user, only: [:show, :edit, :update, :destroy]
 
   # GET /currencies
   # GET /currencies.json
@@ -73,4 +73,12 @@ class CurrenciesController < ApplicationController
     def currency_params
       params.require(:currency).permit(:symbol, :user_id, :cost_per, :amount_owned)
     end
+
+    def correct_user
+      @correct = current_user.currencies.find_by(id: params[:id])
+      redirect_to currencies_path, notice: "Not Authorized To Edit This Entry" if @correct.nil?
+    end
+
+
+
 end
