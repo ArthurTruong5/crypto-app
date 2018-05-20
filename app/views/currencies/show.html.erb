@@ -18,5 +18,6 @@
   <%= @currency.amount_owned %>
 </p>
 
+<%= link_to 'Back', currencies_path %> |
 <%= link_to 'Edit', edit_currency_path(@currency) %> |
-<%= link_to 'Back', currencies_path %>
+<%= link_to 'Delete', currency_path(@currency), method: :delete, data: { confirm: 'Are you sure?' } %>
