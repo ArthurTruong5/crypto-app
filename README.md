@@ -11,8 +11,6 @@ A crypto management tool application that helps maintain a watchlist of all the 
 * Ruby
 * Rails
 
-`$ pip install foobar`
-
 ## Running
 
 ```rails
