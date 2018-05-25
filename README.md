@@ -1,6 +1,8 @@
-# Crypto Management Tool Application [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://shields.io/)
+# Crypto Management Tool Application [![Website monip.org](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)](http://monip.org/)
 
 A crypto management tool application that helps maintain a watchlist of all the top traded crypto currencies and helps manage profit/loss by entering information.
+
+[Click Here To See Live Website](https://crypto-app-project.herokuapp.com/)
 
 ## Installation
 `$ bundle install`
